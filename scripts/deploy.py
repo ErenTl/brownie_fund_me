@@ -16,6 +16,8 @@ def deploy_fund_me():
             "eth_usd_price_feed"
         ]
     else:
+        # if the network we are using is local network like ganache we
+        # deploy mock for price feed
         deploy_mocks()
         price_feed_address = MockV3Aggregator[-1].address
 
