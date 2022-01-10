@@ -1,0 +1,24 @@
+dependencies:
+  #- <organization/repo>@<version>
+  - smartcontractkit/chainlink-brownie-contracts@1.1.1
+compiler:
+  solc:
+    remappings:
+      - "@chainlink=smartcontractkit/chainlink-brownie-contracts@1.1.1"
+dotenv: .env
+networks:
+  development:
+    verify: False
+    eth_usd_price_decimals: 18
+    starting_price: 2000_000000000000000000
+  ganache-local:
+    verify: False
+    eth_usd_price_decimals: 18
+    starting_price: 2000_000000000000000000 #18 zero after _
+  rinkeby:
+    eth_usd_price_feed: "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e"
+    eth_usd_price_decimals: 8
+    verify: False
+wallets:
+  from_key: ${PRIVATE_KEY}
+
